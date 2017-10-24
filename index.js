@@ -7,9 +7,9 @@ const express = require('express'),
  
 	
 // Dossier static
-app.use('/css', express.static('/public/dashbord/css'));
+app.use(express.static(__dirname + '/public'));
  
 // Routes
 app.get('/', function(req, res) {
-   res.sendFile(path.join(__dirname + '/public/dashbord/index.html'));
+   res.sendFile(path.join(__dirname + '/public/index.html'));
 })
