@@ -6,8 +6,7 @@ var port = process.env.PORT || 3000;
 
 
 // Dossier static
-app.use('/assets', express.static(__dirname + '/public/dashbord/assets'));
-
+ 
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/public/dashbord/index.html');
 });
