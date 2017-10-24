@@ -78,10 +78,10 @@ $(function() {
         bindto: '#visitor',
         data: {
             columns: [
-                ['Other', 30],
+                ['Rpi2', 30],
                 ['Desktop', 10],
-                ['Tablet', 40],
-                ['Mobile', 50],
+                ['Arduino', 40],
+                ['Rpi3', 50],
             ],
 
             type: 'donut',
