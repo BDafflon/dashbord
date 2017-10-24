@@ -1,22 +1,15 @@
-var app = require('express')();
-var path = require('path');
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
 var port = process.env.PORT || 3000;
-
-
-// Dossier static
+const express = require('express'),
+      app     = express(),
+      server  = require('http').createServer(app).listen(port),
+      io      = require('socket.io')(server),
+      path    = require('path');
  
-app.get('/', function(req, res){
-  res.sendFile(__dirname + '/public/dashbord/index.html');
-});
-
-io.on('connection', function(socket){
-  socket.on('chat message', function(msg){
-    io.emit('chat message', msg);
-  });
-});
-
-http.listen(port, function(){
-  console.log('listening on *:' + port);
-});
+	
+// Dossier static
+app.use('/css', express.static('/public/dashbord/css'));
+ 
+// Routes
+app.get('/', function(req, res) {
+   res.sendFile(path.join(__dirname + '/public/dashbord/index.html'));
+})
