@@ -18,12 +18,12 @@ app.use(session({secret: 'openCPSCookies'}));
 // Routes
  
 app.get('/', function(req, res) {
-	 if(req.session.login){
+	 if(req.session.login==false){
 		 
 		res.sendFile(path.join(__dirname + '/public/index.html'));
 	 }
 	 else{
-		 req.session.page_views = 1;
+		 req.session.login = 1;
 		 res.sendFile(path.join(__dirname + '/public/index2.html'));
 	 }
 })
