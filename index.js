@@ -22,13 +22,13 @@ function restrict(req, res, next) {
     next();
   } else {
     req.session.error = 'Access denied!';
-    res.redirect('/login');
+    res.redirect(path.join(__dirname + '/public/login.html'));
   }
 }
 
 
 // Routes
-app.get('/', function(req,restrict, res) {
+app.get('/', function(req, restrict, res) {
  
 	res.sendFile(path.join(__dirname + '/public/index.html'));
 	  
