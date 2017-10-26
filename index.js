@@ -15,11 +15,21 @@ app.use(express.static(__dirname + '/public'));
 app.use(cookieParser());
 app.use(session({ secret: 'this-is-a-secret-token', cookie: { maxAge: 60000 }}));
 
+
+//login
+function restrict(req, res, next) {
+  if (req.session.user) {
+    next();
+  } else {
+    req.session.error = 'Access denied!';
+    res.redirect('/login');
+  }
+}
+
+
 // Routes
+app.get('/', function(req,restrict, res) {
  
-app.get('/', function(req, res) {
-	var sessData = req.session;
-	sessData.login = true;
 	res.sendFile(path.join(__dirname + '/public/index.html'));
 	  
 })
