@@ -13,13 +13,13 @@ app.use(express.static(__dirname + '/public'));
  
 // session
 app.use(cookieParser());
-app.use(session({secret: 'openCPSCookies'}));
+app.use(session({ secret: 'this-is-a-secret-token', cookie: { maxAge: 60000 }}));
 
 // Routes
  
 app.get('/', function(req, res) {
-	console.log('start');
-	console.log('req.session', req.session);
+	var sessData = req.session;
+	sessData.login = true;
 	res.sendFile(path.join(__dirname + '/public/index.html'));
 	  
 })
