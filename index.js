@@ -18,6 +18,7 @@ app.use(session({secret: 'openCPSCookies'}));
 // Routes
  
 app.get('/', function(req, res) {
+	console.log('req.session', req.session);
 	 if(req.session.login==false){
 		 console.log('hello world');
 		res.sendFile(path.join(__dirname + '/public/login.html'));
