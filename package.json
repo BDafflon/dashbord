@@ -1,27 +1,21 @@
 {
-  "name": "node-js-getting-started",
-  "version": "0.2.6",
-  "description": "A sample Node.js app using Express 4",
-  "engines": {
-    "node": "6.11.1"
+  "author": "Nicolas Chambrier <naholyr@gmail.com> (http://naholyr.fr)",
+  "name": "demo-chat",
+  "version": "0.0.0",
+  "homepage": "http://naholyr.fr/2011/07/authentification-et-websocket-avec-node-js-express-et-socket-io",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/naholyr/node-chat-socketio-handshake.git"
   },
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js"
+  "main": "app.js",
+  "engines": {
+    "node": ">= 0.4.0"
   },
   "dependencies": {
-    "express": "^4.15.2",
-    "socket.io": "^1.7.3",
-	"express-session": "^1.7.6",
-	"cookie-parser":"^1.4.3",
-	"ejs":"2.5.7",
+    "express": "~3.0.6",
+    "ejs": "~0.8.3",
+    "socket.io": "~0.9.13",
     "ejs-locals": "~1.0.2"
   },
-  "devDependencies": {
-    "request": "^2.81.0",
-    "tape": "^4.7.0"
-  },
-  "license": "MIT"
+  "devDependencies": {}
 }
-
-

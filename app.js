@@ -5,7 +5,7 @@ const path = require('path')
     , app = express()
     , http = require('http')
     , server = http.createServer(app)
-    , port = process.env.PORT || 30000
+    , port = process.env.PORT || 1337
     , sessionStore = new express.session.MemoryStore({ reapInterval: 60000 * 10 })
     , sessionSecret = "some private string"
     ;
